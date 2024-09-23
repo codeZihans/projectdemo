@@ -1,0 +1,24 @@
+@model AdonetCrud.Models.Product
+@{
+ViewData["Title"] = "Update";
+
+}
+
+
+<form method="post">
+    <input type="hidden" name="id" value="@Model.Id">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="@Model.Name" >
+
+    <label for="expirydate">Expiry Date</label>
+   <input type="date" name="expirydate" id="expirydate" value="@Model.ExpiryDate.ToString("yyyy-MM-dd")">
+
+   <label for="price">Price</label>
+   <input type="number" name="price" id="price" value="@Model.Price">
+   
+   <label for="label">Unit</label>
+   <input type="text" name="unit" id="unit" value="@Model.Unit">
+   
+   <input type="submit" value="Save">
+</form>

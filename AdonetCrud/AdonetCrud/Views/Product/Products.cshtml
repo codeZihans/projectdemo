@@ -1,0 +1,32 @@
+﻿@model List<AdonetCrud.Models.Product>
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+
+<form>
+    <table class="table table-responsive table-striped table-bordered text-center">
+        <thead>
+            <th>Name</th>
+            <th>Expiry Date</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.ExpiryDate</td>
+                    <td>@product.Price</td>
+                    <td>@product.Unit</td>
+                    <td>
+                        <a href="/Product/Update/@product.Id" class="btn btn-warning">Update</a>
+                        <a href="/Product/Delete/@product.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
